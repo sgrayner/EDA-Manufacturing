@@ -10,6 +10,10 @@ Clone the github repostory by running the following command in a terminal.
 git clone https://github.com/sgrayner/EDA-Manufacturing.git
 ```
 
+### Data sources?
+
+### Steps in EDA process?
+
 ### Usage instructions
 
 The notebook file, (Notebook.ipynb) is the file that will walk you through the exploratory data analysis process. Run the code blocks from the beginning to run the EDA process on the data.
@@ -19,3 +23,5 @@ The df_utils.py file contains the functions for extracting, cleaning, analysing 
 ### EDA functions?
 
 ### File structure
+
+### Results/findings
