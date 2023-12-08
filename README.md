@@ -17,7 +17,6 @@ git clone https://github.com/sgrayner/EDA-Manufacturing.git
 
 ### File structure of the project
 
-C:\EDA-Manufacturing
    - README.md
    - EDA_process.ipynb
    - db_utils.py
