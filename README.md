@@ -5,7 +5,6 @@
 
 This project is to optimise a manufacturing machine process for a large industrial company. We extract data on to the local computer from an RDS database. The data is then cleaned, analysed and visualised. Conclusions are then drawn on how the manufacturing machine can be run with minimal failures.
 
-
 <br>
 
 ### Installation instructions
@@ -18,18 +17,17 @@ git clone https://github.com/sgrayner/EDA-Manufacturing.git
 
 ### File structure of the project
 
-C:\EDA-Manufacturing
-   - README.md
-   - Notebook.ipynb
-   - db_utils.py
-   - failure_data.csv
+|--- README.md  
+|--- EDA_process.ipynb  
+|--- db_utils.py  
+|--- failure_data.csv
 <br>
 
 ### File usage
 
 - **README.md** contains project information and information on the variables, code and conclusions made within the project.
 
-- **Notebook.ipynb** will walk you through the exploratory data analysis process. Run the code blocks from the beginning to run the EDA process on the data.
+- **EDA_process.ipynb** will walk you through the exploratory data analysis process. Run the code blocks from the beginning to run the EDA process on the data.
 
 - **df_utils.py** contains the functions for extracting, cleaning, analysing and visualising the data.
 
