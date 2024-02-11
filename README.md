@@ -1,29 +1,42 @@
-## EDA manufacturing project
+# EDA manufacturing project
 ***
 
-### Project description
+## Project description
 
 This project is to optimise a manufacturing machine process for a large industrial company. We extract data on to the local computer from an RDS database. The data is then cleaned, analysed and visualised. Conclusions are then drawn on how the manufacturing machine can be run with minimal failures.
 
-<br>
 
-### Installation instructions
+## Installation instructions
 
 Clone the github repostory by running the following command in a terminal.
 ```
 git clone https://github.com/sgrayner/EDA-Manufacturing.git
 ```
+
+## Python libraries
+
+- numpy
+- pandas
+- scipy
+- matplotlib
+- plotly.express
+- statsmodels
+- sqlalchemy
+- yaml
+
+## Github repository structure
+
+```
+│   ├── EDA_process.ipynb
+│   │── README.md
+│   ├── data_analysis.py
+│   ├── data_cleaning.py
+│   │── db_utils.py
+│   ├── failure_data.csv
+```
 <br>
 
-### File structure of the project
-
-|--- README.md  
-|--- EDA_process.ipynb  
-|--- db_utils.py  
-|--- failure_data.csv
-<br>
-
-### File usage
+## File usage
 
 - **README.md** contains project information and information on the variables, code and conclusions made within the project.
 
