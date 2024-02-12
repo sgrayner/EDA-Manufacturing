@@ -31,11 +31,11 @@ class DatabaseConnector:
         data = self.__read_creds()
         DATABASE_TYPE = 'postgresql'
         DBAPI = 'psycopg2'
-        HOST = data['RDS_HOST']
-        USER = data['RDS_USER']
-        PASSWORD = data['RDS_PASSWORD']
-        DATABASE = data['RDS_DATABASE']
-        PORT = data['RDS_PORT']
+        HOST = data['HOST']
+        USER = data['USER']
+        PASSWORD = data['PASSWORD']
+        DATABASE = data['DATABASE']
+        PORT = data['PORT']
         engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}")
         return engine
     
