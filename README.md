@@ -1,40 +1,65 @@
-## EDA manufacturing project
+# EDA manufacturing project
 ***
 
-### Project description
+## Project description
 
 This project is to optimise a manufacturing machine process for a large industrial company. We extract data on to the local computer from an RDS database. The data is then cleaned, analysed and visualised. Conclusions are then drawn on how the manufacturing machine can be run with minimal failures.
 
-<br>
 
-### Installation instructions
+## Installation instructions
 
 Clone the github repostory by running the following command in a terminal.
 ```
 git clone https://github.com/sgrayner/EDA-Manufacturing.git
 ```
+
+## Python libraries
+
+- numpy
+- pandas
+- scipy
+- matplotlib
+- plotly.express
+- statsmodels
+- sqlalchemy
+- yaml
+
+## Github repository structure
+
+```
+│   ├── EDA_process.ipynb
+│   │── README.md
+│   ├── data_analysis.py
+│   ├── data_cleaning.py
+│   │── db_utils.py
+│   ├── failure_data.csv
+```
 <br>
 
-### File structure of the project
-
-|--- README.md  
-|--- EDA_process.ipynb  
-|--- db_utils.py  
-|--- failure_data.csv
-<br>
-
-### File usage
+## File information
 
 - **README.md** contains project information and information on the variables, code and conclusions made within the project.
-
 - **EDA_process.ipynb** will walk you through the exploratory data analysis process. Run the code blocks from the beginning to run the EDA process on the data.
-
-- **df_utils.py** contains the functions for extracting, cleaning, analysing and visualising the data.
-
+- **db_utils.py** contains the functions for connecting to the RDS database and extracting the data.
+- **data_cleaning.py** contains functions for transforming the data to prepare it for analysis.
+- **data_analysis.py** contains functions for analysing and visualising the data to extract information.
 - **failure_data.csv** contains the data.
 <br>
 
-### Data variables
+### EDA notebook sections
+
+- **Extracting and cleaning the data** - extracting the data, investigating column quality, cleaning the data.
+- **Preparing the data** - investigating correlation, null value imputation, skew transformation, outlier detection, collinearity detection.
+- **Analysing the data** - investigating operating ranges of the variables, visualising machine failures against explanatory variables.
+
+## Data extraction
+
+We extract the data from an RDS database:
+```
+conn = du.DatabaseConnector('credentials.yaml')
+df = conn.read_rds_table(table='failure_data')
+```
+This dataframe has 10000 records and 14 columns:
 
 - **UDI**: Unique identifier of the machining session.
 - **Product ID**: Product specific serial number.
@@ -52,7 +77,7 @@ git clone https://github.com/sgrayner/EDA-Manufacturing.git
 - **RNF**: (random failures) Failures in the process which could not be categorised.
 <br>
 
-### EDA functions
+## Data transformation
 
 *class RDSDatabaseConnector*
 - **\_\_read_creds\_\_** - Reads and returns the credentials of the RDS database where the data is stored.
@@ -66,7 +91,6 @@ git clone https://github.com/sgrayner/EDA-Manufacturing.git
 - **impute_nulls** - Imputes null values.
 - **remove_skew** - Removes significant skew from the data.
 - **drop_outliers** - Removes outlier values from the data.
-- **remove_collinearity** - Removes variables that are collinear with others.
 
 *class DataAnalysis*
 - **ranges_table** - Returns maximum and minimum values of explanatory variables.
@@ -74,7 +98,9 @@ git clone https://github.com/sgrayner/EDA-Manufacturing.git
 - **failure_plots** - Plots bar charts detailing information on machine failure types as well as failures of each product quality type.
 <br>
 
-### Results/findings
+## Analysis
+
+## Results/findings
 
 - Torque must be kept between 10 Nm and 42 Nm to prevent HDF, PWF and OSF
 - Tool wear must be below 175 min to prevent TWF and OSF.
